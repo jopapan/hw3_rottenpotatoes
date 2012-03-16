@@ -51,6 +51,9 @@ end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
+     rows = page.all('#movies tbody tr').size.to_s
+     puts rows
+#     puts page.body
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
@@ -87,10 +90,12 @@ When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
 end
 
 When /^(?:|I )check "([^"]*)"$/ do |field|
+  p field
   check(field)
 end
 
 When /^(?:|I )uncheck "([^"]*)"$/ do |field|
+  p field 
   uncheck(field)
 end
 

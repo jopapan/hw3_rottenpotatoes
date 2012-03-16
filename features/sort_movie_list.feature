@@ -22,8 +22,20 @@ Background: movies have been added to database
   And I am on the RottenPotatoes home page
 
 Scenario: sort movies alphabetically
-  # your steps here
+When I check the following ratings: PG, R, G, PG-13, NC-17
+And I press "Refresh"
+And I follow "Movie Title"
+Then I should see "Chicken Run" before "The Help"
 
 Scenario: sort movies in increasing order of release date
+
+When I check the following ratings: PG, R, G, PG-13, NC-17
+And I press "Refresh"
+And I follow "Release Date"
+Then I should see "Chicken Run" before "The Help"
+
+#Then I should see   # your steps here
+
+#Scenario: sort movies in increasing order of release date
   # your steps here
 
